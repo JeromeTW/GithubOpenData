@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="XZh-Kq-81e">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserElementCell" rowHeight="200" id="XZh-Kq-81e" customClass="UserElementCell" customModule="Github_Open_Data" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XZh-Kq-81e" id="2QW-JH-f9l">
@@ -82,6 +82,13 @@
                                                 <constraint firstItem="eKx-po-alL" firstAttribute="leading" secondItem="2QW-JH-f9l" secondAttribute="leading" constant="20" id="vLI-Qc-c4g"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avatarImageView" destination="eKx-po-alL" id="NeH-hE-68a"/>
+                                            <outlet property="badgeView" destination="EEG-aP-VUG" id="Vf6-C4-Vmx"/>
+                                            <outlet property="badgeViewHeightLayout" destination="jjb-10-BT2" id="HNS-xP-bHr"/>
+                                            <outlet property="nameLabel" destination="Mfa-9D-CPm" id="95W-JT-hxG"/>
+                                            <outlet property="siteAdminLabel" destination="RZs-Rd-Nrn" id="RaQ-e8-QUP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -95,6 +102,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="hDI-g2-ir8" id="ZGj-T7-X0b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
