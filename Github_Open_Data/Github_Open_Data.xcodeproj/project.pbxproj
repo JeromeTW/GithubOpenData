@@ -13,6 +13,7 @@
 		02588A54247F35090082F04F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02588A52247F35090082F04F /* Main.storyboard */; };
 		02588A56247F350C0082F04F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02588A55247F350C0082F04F /* Assets.xcassets */; };
 		02588A59247F350C0082F04F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02588A57247F350C0082F04F /* LaunchScreen.storyboard */; };
+		02588A65247F3CF00082F04F /* UserElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02588A64247F3CF00082F04F /* UserElement.swift */; };
 		15A50F6850C438A503872B91 /* Pods_Github_Open_Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F307A3AC76A71505F97AAD1 /* Pods_Github_Open_Data.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		02588A55247F350C0082F04F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02588A58247F350C0082F04F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02588A5A247F350C0082F04F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02588A64247F3CF00082F04F /* UserElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserElement.swift; sourceTree = "<group>"; };
 		13AD757D9EA2AF477EC829E7 /* Pods-Github_Open_Data.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Github_Open_Data.debug.xcconfig"; path = "Target Support Files/Pods-Github_Open_Data/Pods-Github_Open_Data.debug.xcconfig"; sourceTree = "<group>"; };
 		8F307A3AC76A71505F97AAD1 /* Pods_Github_Open_Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Github_Open_Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0CB98055746C1DF75623491 /* Pods-Github_Open_Data.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Github_Open_Data.release.xcconfig"; path = "Target Support Files/Pods-Github_Open_Data/Pods-Github_Open_Data.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		02588A61247F3A680082F04F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				02588A64247F3CF00082F04F /* UserElement.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02588A51247F35090082F04F /* ViewController.swift in Sources */,
+				02588A65247F3CF00082F04F /* UserElement.swift in Sources */,
 				02588A4D247F35090082F04F /* AppDelegate.swift in Sources */,
 				02588A4F247F35090082F04F /* SceneDelegate.swift in Sources */,
 			);
