@@ -35,9 +35,12 @@ class UserElementCell: UITableViewCell {
       siteAdminLabel.text = "STAFF"
       badgeViewHeightLayout.constant = badgeViewDefaultHeight
     }
+    // TODO: Should Cancel download if cell is not visible.
     viewModel.download { [weak self] data in
+      guard let strongSelf = self else { return }
       if let image = UIImage(data: data) {
-        self?.avatarImageView.image = image
+        strongSelf.avatarImageView.layer.cornerRadius = strongSelf.avatarImageView.frame.width * 0.5
+        strongSelf.avatarImageView.image = image
       } else {
         print("Cannot download image.")
       }

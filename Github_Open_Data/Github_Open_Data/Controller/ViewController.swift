@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     didSet {
       tableView.delegate = self
       tableView.dataSource = self
+      tableView.rowHeight = 80
     }
   }
   
