@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,6 +45,7 @@
 		02588A40247F35090082F04F = {
 			isa = PBXGroup;
 			children = (
+				02588A60247F39850082F04F /* Supporting Files */,
 				02588A4B247F35090082F04F /* Github_Open_Data */,
 				02588A4A247F35090082F04F /* Products */,
 				8EF8AB19661A0CB960BDD5F8 /* Pods */,
@@ -63,15 +64,46 @@
 		02588A4B247F35090082F04F /* Github_Open_Data */ = {
 			isa = PBXGroup;
 			children = (
-				02588A4C247F35090082F04F /* AppDelegate.swift */,
-				02588A4E247F35090082F04F /* SceneDelegate.swift */,
-				02588A50247F35090082F04F /* ViewController.swift */,
-				02588A52247F35090082F04F /* Main.storyboard */,
-				02588A55247F350C0082F04F /* Assets.xcassets */,
-				02588A57247F350C0082F04F /* LaunchScreen.storyboard */,
-				02588A5A247F350C0082F04F /* Info.plist */,
+				02588A63247F3A800082F04F /* Controller */,
+				02588A62247F3A720082F04F /* View */,
+				02588A61247F3A680082F04F /* Model */,
 			);
 			path = Github_Open_Data;
+			sourceTree = "<group>";
+		};
+		02588A60247F39850082F04F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				02588A4C247F35090082F04F /* AppDelegate.swift */,
+				02588A4E247F35090082F04F /* SceneDelegate.swift */,
+				02588A5A247F350C0082F04F /* Info.plist */,
+				02588A55247F350C0082F04F /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		02588A61247F3A680082F04F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		02588A62247F3A720082F04F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				02588A52247F35090082F04F /* Main.storyboard */,
+				02588A57247F350C0082F04F /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		02588A63247F3A800082F04F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				02588A50247F35090082F04F /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		78154BCD1E89D2A68864AC84 /* Frameworks */ = {
@@ -88,7 +120,6 @@
 				13AD757D9EA2AF477EC829E7 /* Pods-Github_Open_Data.debug.xcconfig */,
 				B0CB98055746C1DF75623491 /* Pods-Github_Open_Data.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -356,7 +387,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47FGBWZVJ9;
-				INFOPLIST_FILE = Github_Open_Data/Info.plist;
+				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -375,7 +406,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 47FGBWZVJ9;
-				INFOPLIST_FILE = Github_Open_Data/Info.plist;
+				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
