@@ -20,7 +20,7 @@ class UserElementViewModel {
   }
   
   
-  public var name: String {
+  public var login: String {
     return userElement.login
   }
   

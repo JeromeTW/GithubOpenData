@@ -11,7 +11,7 @@ import UIKit
 class UserElementCell: UITableViewCell {
   @IBOutlet weak var customContentView: UIView!
   @IBOutlet weak var avatarImageView: UIImageView!
-  @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var loginLabel: UILabel!
   @IBOutlet weak var badgeView: UIView!
   @IBOutlet weak var siteAdminLabel: UILabel!
   
@@ -26,7 +26,7 @@ class UserElementCell: UITableViewCell {
   
   func resetUI() {
     avatarImageView.image = nil
-    nameLabel.text = ""
+    loginLabel.text = ""
     siteAdminLabel.text = ""
     badgeViewHeightLayout.constant = 0
     
@@ -41,7 +41,7 @@ class UserElementCell: UITableViewCell {
   }
   
   func updateUI(viewModel: UserElementViewModel) {
-    nameLabel.text = viewModel.name
+    loginLabel.text = viewModel.login
     self.viewModel = viewModel
     if viewModel.siteAdmin {
       siteAdminLabel.text = "STAFF"

@@ -99,7 +99,7 @@
                                             <outlet property="badgeView" destination="EEG-aP-VUG" id="Vf6-C4-Vmx"/>
                                             <outlet property="badgeViewHeightLayout" destination="jjb-10-BT2" id="HNS-xP-bHr"/>
                                             <outlet property="customContentView" destination="KPI-dk-Urr" id="JfU-5n-Nli"/>
-                                            <outlet property="nameLabel" destination="Mfa-9D-CPm" id="95W-JT-hxG"/>
+                                            <outlet property="loginLabel" destination="Mfa-9D-CPm" id="95W-JT-hxG"/>
                                             <outlet property="siteAdminLabel" destination="RZs-Rd-Nrn" id="RaQ-e8-QUP"/>
                                         </connections>
                                     </tableViewCell>

@@ -72,7 +72,7 @@ extension ViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let viewModel = userElementViewModels[indexPath.row]
-    let getUserURLString = "https://api.github.com/users/" + viewModel.name
+    let getUserURLString = "https://api.github.com/users/" + viewModel.login
     MBProgressHUD.showAdded(to: view, animated: true)
     AF.request(getUserURLString).response { [weak self] response in
       guard let strongSelf = self else { return }
