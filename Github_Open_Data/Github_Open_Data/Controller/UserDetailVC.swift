@@ -11,7 +11,10 @@ import UIKit
 
 class UserDetailVC: UIViewController, Storyboarded {
   
+  var user: User!
   override func viewDidLoad() {
     super.viewDidLoad()
+    assert(user != nil)
+    
   }
 }
