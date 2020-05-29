@@ -15,7 +15,9 @@ class ViewController: UIViewController {
     didSet {
       tableView.delegate = self
       tableView.dataSource = self
-      tableView.rowHeight = 80
+      tableView.rowHeight = 90
+      tableView.tableFooterView = UIView(frame: .zero)
+      tableView.contentInsetAdjustmentBehavior = .never
     }
   }
   
@@ -58,6 +60,9 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: UITableViewDelegate {
-  
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    // Push the dividing line given by the system out of the screen
+    cell.separatorInset = UIEdgeInsets(top: 0, left: 10000, bottom: 0, right: 0)
+  }
 }
 
