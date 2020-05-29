@@ -87,6 +87,7 @@ extension ViewController: UITableViewDelegate {
           let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
           let userDetailVC = UserDetailVC.instantiate(storyboard: storyboard)
           userDetailVC.userViewModel = UserViewModel(user: user)
+          userDetailVC.modalPresentationStyle = .fullScreen
           strongSelf.present(userDetailVC, animated: true, completion: nil)
         } catch {
           print("decode failed. Error: \(String(describing: error))")
