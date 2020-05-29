@@ -86,7 +86,7 @@ extension ViewController: UITableViewDelegate {
           let user = try decoder.decode(User.self, from: data)
           let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
           let userDetailVC = UserDetailVC.instantiate(storyboard: storyboard)
-          userDetailVC.user = user
+          userDetailVC.userViewModel = UserViewModel(user: user)
           strongSelf.present(userDetailVC, animated: true, completion: nil)
         } catch {
           print("decode failed. Error: \(String(describing: error))")

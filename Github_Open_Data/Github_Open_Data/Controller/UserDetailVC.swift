@@ -11,7 +11,6 @@ import UIKit
 
 class UserDetailVC: UIViewController, Storyboarded {
   
-  
   @IBOutlet weak var avatarImageView: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var bioLabel: UILabel!
@@ -25,11 +24,25 @@ class UserDetailVC: UIViewController, Storyboarded {
   
   private let badgeViewDefaultHeight: CGFloat = 21
   
-  var user: User!
+  var userViewModel: UserViewModel!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    assert(user != nil)
-    
+    assert(userViewModel != nil)
+    updateUI()
+  }
+  
+  private func updateUI() {
+    nameLabel.text = userViewModel.name
+    bioLabel.text = userViewModel.bio
+    loginLabel.text = userViewModel.login
+    if userViewModel.siteAdmin {
+      siteAdminLabel.text = "STAFF"
+      badgeViewHeightLayout.constant = badgeViewDefaultHeight
+    }
+    userViewModel.asyncShowImage { [weak self] image in
+      self?.avatarImageView.image = image
+    }
   }
   
   @IBAction func closeBtnPressed(_ sender: Any) {
