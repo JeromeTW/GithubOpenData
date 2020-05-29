@@ -11,10 +11,32 @@ import UIKit
 
 class UserDetailVC: UIViewController, Storyboarded {
   
+  
+  @IBOutlet weak var avatarImageView: UIImageView!
+  @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var bioLabel: UILabel!
+  @IBOutlet weak var loginLabel: UILabel!
+  @IBOutlet weak var badgeView: UIView!
+  @IBOutlet weak var siteAdminLabel: UILabel!
+  @IBOutlet weak var badgeViewHeightLayout: NSLayoutConstraint!
+  
+  @IBOutlet weak var locationLabel: UILabel!
+  @IBOutlet weak var blogButton: UIButton!
+  
+  private let badgeViewDefaultHeight: CGFloat = 21
+  
   var user: User!
   override func viewDidLoad() {
     super.viewDidLoad()
     assert(user != nil)
     
+  }
+  
+  @IBAction func closeBtnPressed(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
+  }
+  
+  @IBAction func blogLinkBtnPressed(_ sender: Any) {
+    // TODO: Open Safari
   }
 }

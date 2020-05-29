@@ -140,6 +140,9 @@
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
                                         <state key="normal" image="xmark" catalog="system"/>
+                                        <connections>
+                                            <action selector="closeBtnPressed:" destination="hgg-Hn-hjK" eventType="touchUpInside" id="SB3-Ol-86O"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zYA-I4-FtJ">
                                         <rect key="frame" x="103.5" y="103.5" width="207" height="207"/>
@@ -306,6 +309,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDI-Pb-MUx">
                                                         <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="blogLinkBtnPressed:" destination="hgg-Hn-hjK" eventType="touchUpInside" id="FmM-13-Nq2"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -355,6 +361,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EML-Uz-uqN"/>
                     </view>
+                    <connections>
+                        <outlet property="avatarImageView" destination="zYA-I4-FtJ" id="PjK-fW-GCX"/>
+                        <outlet property="badgeView" destination="MmT-zh-yJt" id="SLS-pz-HbH"/>
+                        <outlet property="badgeViewHeightLayout" destination="Qwl-Ob-YLS" id="XTD-mE-yrQ"/>
+                        <outlet property="bioLabel" destination="Z6E-IH-kJr" id="TyC-w2-hXP"/>
+                        <outlet property="blogButton" destination="pDI-Pb-MUx" id="sPj-Vx-5M6"/>
+                        <outlet property="locationLabel" destination="iQ8-mk-9M2" id="ytU-Oc-In9"/>
+                        <outlet property="loginLabel" destination="8AT-al-jEO" id="mh6-wh-SaT"/>
+                        <outlet property="nameLabel" destination="832-zJ-OLs" id="ILz-k0-ib4"/>
+                        <outlet property="siteAdminLabel" destination="A4C-Kw-Y24" id="EoM-NH-bVJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r51-v6-bdX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
