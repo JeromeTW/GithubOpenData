@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-public typealias ImageDownloadCompletionClosure = (_ image: UIImage ) -> Void
+typealias ImageDownloadCompletionClosure = (_ image: UIImage, _ viewModel: UserElementViewModel) -> Void
 
 class UserElementViewModel {
   
@@ -30,7 +30,7 @@ class UserElementViewModel {
   
   func asyncShowImage(completionHanlder: @escaping ImageDownloadCompletionClosure) {
     if let image = ImageCache.shared.get(userElement.avatarURL) {
-      completionHanlder(image)
+      completionHanlder(image, self)
     } else {
       download(completionHanlder: completionHanlder)
     }
@@ -42,7 +42,7 @@ class UserElementViewModel {
       if let data = response.value {
         if let image = UIImage(data: data) {
           ImageCache.shared.insert(image, string: strongSelf.userElement.avatarURL)
-          completionHanlder(image)
+          completionHanlder(image, strongSelf)
         } else {
           print("Cannot convert data to UIImage")
         }

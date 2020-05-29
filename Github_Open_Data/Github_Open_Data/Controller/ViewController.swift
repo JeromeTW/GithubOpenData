@@ -52,9 +52,9 @@ extension ViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = (tableView.dequeueReusableCell(withIdentifier: String(describing: UserElementCell.self), for: indexPath) as? UserElementCell)!
-    let modelView = userElementViewModels[indexPath.row]
+    let viewModel = userElementViewModels[indexPath.row]
     cell.resetUI()
-    cell.updateUI(viewModel: modelView)
+    cell.updateUI(viewModel: viewModel)
     return cell
   }
 }

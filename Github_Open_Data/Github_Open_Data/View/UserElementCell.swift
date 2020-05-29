@@ -17,6 +17,7 @@ class UserElementCell: UITableViewCell {
   
   @IBOutlet weak var badgeViewHeightLayout: NSLayoutConstraint!
   private let badgeViewDefaultHeight: CGFloat = 21
+  private var viewModel: UserElementViewModel!
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -41,14 +42,17 @@ class UserElementCell: UITableViewCell {
   
   func updateUI(viewModel: UserElementViewModel) {
     nameLabel.text = viewModel.name
+    self.viewModel = viewModel
     if viewModel.siteAdmin {
       siteAdminLabel.text = "STAFF"
       badgeViewHeightLayout.constant = badgeViewDefaultHeight
     }
 
-    // TODO: Should Cancel download if cell is not visible.
-    viewModel.asyncShowImage { [weak self] image in
+    viewModel.asyncShowImage { [weak self] image,downloadingVM in
       guard let strongSelf = self else { return }
+      guard strongSelf.viewModel === downloadingVM else {
+        return
+      }
       strongSelf.avatarImageView.layer.cornerRadius = strongSelf.avatarImageView.frame.width * 0.5
       strongSelf.avatarImageView.image = image
     }
