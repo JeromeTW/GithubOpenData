@@ -25,11 +25,19 @@ class UserElementViewModel {
   }
   
   public var siteAdmin: Bool {
-    return userElement.siteAdmin
+    guard let localSiteAdmin = userElement.siteAdmin else {
+      assertionFailure()
+      return false
+    }
+    return localSiteAdmin
   }
   
   func asyncShowImage(completionHanlder: @escaping ImageDownloadCompletionClosure) {
-    if let image = ImageCache.shared.get(userElement.avatarURL) {
+    guard let localAvatarURL = userElement.avatarURL else {
+      assertionFailure()
+      return
+    }
+    if let image = ImageCache.shared.get(localAvatarURL) {
       completionHanlder(image, self)
     } else {
       download(completionHanlder: completionHanlder)
@@ -37,11 +45,15 @@ class UserElementViewModel {
   }
   
   private func download(completionHanlder: @escaping ImageDownloadCompletionClosure) {
-    AF.download(userElement.avatarURL).responseData { [weak self] response in
+    guard let localAvatarURL = userElement.avatarURL else {
+      assertionFailure()
+      return
+    }
+    AF.download(localAvatarURL).responseData { [weak self] response in
       guard let strongSelf = self else { return }
       if let data = response.value {
         if let image = UIImage(data: data) {
-          ImageCache.shared.insert(image, string: strongSelf.userElement.avatarURL)
+          ImageCache.shared.insert(image, string: localAvatarURL)
           completionHanlder(image, strongSelf)
         } else {
           print("Cannot convert data to UIImage")
