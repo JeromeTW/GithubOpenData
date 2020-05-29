@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-typealias ImageDownloadCompletionClosure = (_ image: UIImage, _ viewModel: UserElementViewModel) -> Void
+typealias ImageDownloadedWithUserElementViewModelCompletion = (_ image: UIImage, _ viewModel: UserElementViewModel) -> Void
 
 class UserElementViewModel {
   
@@ -32,7 +32,7 @@ class UserElementViewModel {
     return localSiteAdmin
   }
   
-  func asyncShowImage(completionHanlder: @escaping ImageDownloadCompletionClosure) {
+  func asyncShowImage(completionHanlder: @escaping ImageDownloadedWithUserElementViewModelCompletion) {
     guard let localAvatarURL = userElement.avatarURL else {
       assertionFailure()
       return
@@ -44,7 +44,7 @@ class UserElementViewModel {
     }
   }
   
-  private func download(completionHanlder: @escaping ImageDownloadCompletionClosure) {
+  private func download(completionHanlder: @escaping ImageDownloadedWithUserElementViewModelCompletion) {
     guard let localAvatarURL = userElement.avatarURL else {
       assertionFailure()
       return
