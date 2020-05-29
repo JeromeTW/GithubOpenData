@@ -16,6 +16,8 @@
 		02588A65247F3CF00082F04F /* UserElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02588A64247F3CF00082F04F /* UserElement.swift */; };
 		02588A68247F5D880082F04F /* UserElementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02588A67247F5D880082F04F /* UserElementViewModel.swift */; };
 		02CFA5562480953400648A18 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CFA5552480953400648A18 /* ImageCache.swift */; };
+		02CFA5582480CE0500648A18 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CFA5572480CE0500648A18 /* UITableView+.swift */; };
+		02CFA55A2480CE4200648A18 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CFA5592480CE4200648A18 /* UIView+.swift */; };
 		02F4112B247F95240086BDE4 /* UserElementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F4112A247F95240086BDE4 /* UserElementCell.swift */; };
 		15A50F6850C438A503872B91 /* Pods_Github_Open_Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F307A3AC76A71505F97AAD1 /* Pods_Github_Open_Data.framework */; };
 /* End PBXBuildFile section */
@@ -32,6 +34,8 @@
 		02588A64247F3CF00082F04F /* UserElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserElement.swift; sourceTree = "<group>"; };
 		02588A67247F5D880082F04F /* UserElementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserElementViewModel.swift; sourceTree = "<group>"; };
 		02CFA5552480953400648A18 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		02CFA5572480CE0500648A18 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
+		02CFA5592480CE4200648A18 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		02F4112A247F95240086BDE4 /* UserElementCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserElementCell.swift; sourceTree = "<group>"; };
 		13AD757D9EA2AF477EC829E7 /* Pods-Github_Open_Data.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Github_Open_Data.debug.xcconfig"; path = "Target Support Files/Pods-Github_Open_Data/Pods-Github_Open_Data.debug.xcconfig"; sourceTree = "<group>"; };
 		8F307A3AC76A71505F97AAD1 /* Pods_Github_Open_Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Github_Open_Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +90,8 @@
 				02588A4C247F35090082F04F /* AppDelegate.swift */,
 				02588A4E247F35090082F04F /* SceneDelegate.swift */,
 				02CFA5552480953400648A18 /* ImageCache.swift */,
+				02CFA5572480CE0500648A18 /* UITableView+.swift */,
+				02CFA5592480CE4200648A18 /* UIView+.swift */,
 				02588A5A247F350C0082F04F /* Info.plist */,
 				02588A55247F350C0082F04F /* Assets.xcassets */,
 			);
@@ -259,10 +265,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				02588A51247F35090082F04F /* ViewController.swift in Sources */,
+				02CFA5582480CE0500648A18 /* UITableView+.swift in Sources */,
 				02588A68247F5D880082F04F /* UserElementViewModel.swift in Sources */,
 				02588A65247F3CF00082F04F /* UserElement.swift in Sources */,
 				02F4112B247F95240086BDE4 /* UserElementCell.swift in Sources */,
 				02588A4D247F35090082F04F /* AppDelegate.swift in Sources */,
+				02CFA55A2480CE4200648A18 /* UIView+.swift in Sources */,
 				02CFA5562480953400648A18 /* ImageCache.swift in Sources */,
 				02588A4F247F35090082F04F /* SceneDelegate.swift in Sources */,
 			);

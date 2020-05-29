@@ -16,16 +16,20 @@ class ViewController: UIViewController {
       tableView.delegate = self
       tableView.dataSource = self
       tableView.rowHeight = 90
-      tableView.tableFooterView = UIView(frame: .zero)
       tableView.contentInsetAdjustmentBehavior = .never
+      tableView.showFooterIndicator(style: .large, color: .gray, scale: 2.0, paddingY: 20)
     }
   }
   
   var userElementViewModels: [UserElementViewModel] = []
   override func viewDidLoad() {
     super.viewDidLoad()
+    tableView.tableFooterView?.isHidden = false
     let getAllURLString = "https://api.github.com/users"
     AF.request(getAllURLString).response { [weak self] response in
+      defer {
+        self?.tableView.tableFooterView = nil
+      }
       if let data = response.data {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
