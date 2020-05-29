@@ -9,7 +9,7 @@
 import Alamofire
 import UIKit
 
-class UserDetailVC: UIViewController {
+class UserDetailVC: UIViewController, Storyboarded {
   
   override func viewDidLoad() {
     super.viewDidLoad()

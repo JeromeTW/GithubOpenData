@@ -126,7 +126,7 @@
         <!--User DetailVC-->
         <scene sceneID="bgO-gN-syz">
             <objects>
-                <viewController id="hgg-Hn-hjK" customClass="UserDetailVC" customModule="Github_Open_Data" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserDetailVC" id="hgg-Hn-hjK" customClass="UserDetailVC" customModule="Github_Open_Data" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ydl-pJ-rmZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
