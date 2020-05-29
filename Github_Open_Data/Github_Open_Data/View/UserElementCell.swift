@@ -9,6 +9,7 @@
 import UIKit
 
 class UserElementCell: UITableViewCell {
+  @IBOutlet weak var customContentView: UIView!
   @IBOutlet weak var avatarImageView: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var badgeView: UIView!
@@ -27,6 +28,15 @@ class UserElementCell: UITableViewCell {
     nameLabel.text = ""
     siteAdminLabel.text = ""
     badgeViewHeightLayout.constant = 0
+    
+    contentView.backgroundColor = .clear
+    
+    customContentView.layer.borderWidth = 1
+    customContentView.layer.borderColor = UIColor.lightGray.cgColor
+    
+    customContentView.layer.shadowColor = UIColor.lightGray.cgColor
+    customContentView.layer.shadowOpacity = 0.8
+    customContentView.layer.shadowOffset = CGSize(width: 0, height: 1)
   }
   
   func updateUI(viewModel: UserElementViewModel) {
