@@ -6,10 +6,10 @@
 //  Copyright © 2020 JEROME. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Alamofire
 
-public typealias ImageDownloadCompletionClosure = (_ imageData: Data ) -> Void
+public typealias ImageDownloadCompletionClosure = (_ image: UIImage ) -> Void
 
 class UserElementViewModel {
   
@@ -28,10 +28,24 @@ class UserElementViewModel {
     return userElement.siteAdmin
   }
   
-  func download(completionHanlder: @escaping ImageDownloadCompletionClosure) {
-    AF.download(userElement.avatarURL).responseData { response in
+  func asyncShowImage(completionHanlder: @escaping ImageDownloadCompletionClosure) {
+    if let image = ImageCache.shared.get(userElement.avatarURL) {
+      completionHanlder(image)
+    } else {
+      download(completionHanlder: completionHanlder)
+    }
+  }
+  
+  private func download(completionHanlder: @escaping ImageDownloadCompletionClosure) {
+    AF.download(userElement.avatarURL).responseData { [weak self] response in
+      guard let strongSelf = self else { return }
       if let data = response.value {
-        completionHanlder(data)
+        if let image = UIImage(data: data) {
+          ImageCache.shared.insert(image, string: strongSelf.userElement.avatarURL)
+          completionHanlder(image)
+        } else {
+          print("Cannot convert data to UIImage")
+        }
       } else {
         print("download failed. Error: \(String(describing: response.error))")
       }
