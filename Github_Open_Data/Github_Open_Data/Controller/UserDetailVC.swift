@@ -18,7 +18,6 @@ class UserDetailVC: UIViewController, Storyboarded {
   @IBOutlet weak var badgeView: UIView!
   @IBOutlet weak var siteAdminLabel: UILabel!
   @IBOutlet weak var badgeViewHeightLayout: NSLayoutConstraint!
-  
   @IBOutlet weak var locationLabel: UILabel!
   @IBOutlet weak var blogButton: UIButton!
   
@@ -32,16 +31,34 @@ class UserDetailVC: UIViewController, Storyboarded {
     updateUI()
   }
   
+  private var isFirst = true
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    guard isFirst else {
+      return
+    }
+    isFirst = false
+    avatarImageView.layer.cornerRadius = avatarImageView.frame.width * 0.5
+  }
+  
   private func updateUI() {
-    nameLabel.text = userViewModel.name
-    bioLabel.text = userViewModel.bio
+    nameLabel.text = userViewModel.name ?? ""
+    bioLabel.text = userViewModel.bio ?? ""
+    locationLabel.text = userViewModel.location ?? ""
     loginLabel.text = userViewModel.login
     if userViewModel.siteAdmin {
       siteAdminLabel.text = "STAFF"
       badgeViewHeightLayout.constant = badgeViewDefaultHeight
+    } else {
+      badgeViewHeightLayout.constant = 0
     }
     userViewModel.asyncShowImage { [weak self] image in
       self?.avatarImageView.image = image
+    }
+    if let blog = userViewModel.blog {
+      blogButton.setTitle(blog, for: .normal)
+    } else {
+      blogButton.setTitle("", for: .normal)
     }
   }
   
@@ -50,6 +67,9 @@ class UserDetailVC: UIViewController, Storyboarded {
   }
   
   @IBAction func blogLinkBtnPressed(_ sender: Any) {
+    guard let blog = userViewModel.blog, let url = URL(string: blog) else {
+      return
+    }
     // TODO: Open Safari
   }
 }
