@@ -18,7 +18,6 @@ class ViewController: UIViewController {
       tableView.dataSource = self
       tableView.rowHeight = 90
       tableView.contentInsetAdjustmentBehavior = .never
-      tableView.showFooterIndicator(style: .large, color: .gray, scale: 2.0, paddingY: 20)
     }
   }
   
@@ -31,7 +30,7 @@ class ViewController: UIViewController {
   }
   
   private func fecthData() {
-    tableView.tableFooterView?.isHidden = false
+    tableView.showFooterIndicator(style: .large, color: .gray, scale: 2.0, paddingY: 20)
     allUsersLoader.load { [weak self] viewModels in
       defer {
         self?.tableView.tableFooterView = nil
@@ -87,6 +86,15 @@ extension ViewController: UITableViewDelegate {
       } else {
         print("download failed. Error: \(String(describing: response.error))")
       }
+    }
+  }
+  
+  func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    let currentOffset = scrollView.contentOffset.y
+    let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+    
+    if maximumOffset - currentOffset <= 10.0 {
+      fecthData()
     }
   }
 }
