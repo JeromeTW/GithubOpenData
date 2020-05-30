@@ -22,30 +22,22 @@ class ViewController: UIViewController {
     }
   }
   
-  var userElementViewModels: [UserElementViewModel] = []
+  private var userElementViewModels: [UserElementViewModel] = []
+  private let allUsersLoader = AllUsersLoader()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    fecthData()
+  }
+  
+  private func fecthData() {
     tableView.tableFooterView?.isHidden = false
-    let getAllURLString = "https://api.github.com/users"
-    AF.request(getAllURLString).response { [weak self] response in
+    allUsersLoader.load { [weak self] viewModels in
       defer {
         self?.tableView.tableFooterView = nil
       }
-      if let data = response.data {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        do {
-          let users = try decoder.decode([UserElement].self, from: data)
-          self?.userElementViewModels = users.map({ (userElement) -> UserElementViewModel in
-            return UserElementViewModel(userElement: userElement)
-          })
-          self?.tableView.reloadData()
-        } catch {
-          print("decode failed. Error: \(String(describing: error))")
-        }
-      } else {
-        print("download failed. Error: \(String(describing: response.error))")
-      }
+      self?.userElementViewModels.append(contentsOf: viewModels)
+      self?.tableView.reloadData()
     }
   }
 }
