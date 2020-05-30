@@ -20,6 +20,7 @@ class UserDetailVC: UIViewController, Storyboarded {
   @IBOutlet weak var badgeViewHeightLayout: NSLayoutConstraint!
   @IBOutlet weak var locationLabel: UILabel!
   @IBOutlet weak var blogButton: UIButton!
+  @IBOutlet weak var imageIndicator: UIActivityIndicatorView!
   
   private let badgeViewDefaultHeight: CGFloat = 21
   
@@ -54,6 +55,7 @@ class UserDetailVC: UIViewController, Storyboarded {
     }
     userViewModel.asyncShowImage { [weak self] image in
       self?.avatarImageView.image = image
+      self?.imageIndicator.stopAnimating()
     }
     if let blog = userViewModel.blog {
       blogButton.setTitle(blog, for: .normal)
