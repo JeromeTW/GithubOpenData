@@ -25,7 +25,8 @@ struct User: Codable {
   let name, company: String?
   let blog: String?
   let location: String?
-  let email, hireable, bio, twitterUsername: String?
+  let hireable: Bool?
+  let email, bio, twitterUsername: String?
   let publicRepos, publicGists, followers, following: Int?
   let createdAt, updatedAt: Date?
   
