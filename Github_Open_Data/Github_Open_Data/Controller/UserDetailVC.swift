@@ -70,6 +70,6 @@ class UserDetailVC: UIViewController, Storyboarded {
     guard let blog = userViewModel.blog, let url = URL(string: blog) else {
       return
     }
-    // TODO: Open Safari
+    UIApplication.shared.open(url)
   }
 }
