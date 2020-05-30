@@ -72,11 +72,11 @@ class AllUsersLoader {
           })
           completion(viewModels)
         } catch {
-          print("decode failed. Error: \(String(describing: error))")
+          assertionFailure("decode failed. Error: \(String(describing: error))")
           completion([])
         }
       } else {
-        print("download failed. Error: \(String(describing: response.error))")
+        assertionFailure("download failed. Error: \(String(describing: response.error))")
         completion([])
       }
     }

@@ -81,10 +81,10 @@ extension ViewController: UITableViewDelegate {
           userDetailVC.modalPresentationStyle = .fullScreen
           strongSelf.present(userDetailVC, animated: true, completion: nil)
         } catch {
-          print("decode failed. Error: \(String(describing: error))")
+          assertionFailure("decode failed. Error: \(String(describing: error))")
         }
       } else {
-        print("download failed. Error: \(String(describing: response.error))")
+        assertionFailure("download failed. Error: \(String(describing: response.error))")
       }
     }
   }
