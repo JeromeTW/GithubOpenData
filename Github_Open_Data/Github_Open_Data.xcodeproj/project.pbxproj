@@ -64,6 +64,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02168DD324825E47008AE1AF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				02CFA5572480CE0500648A18 /* UITableView+.swift */,
+				02CFA5592480CE4200648A18 /* UIView+.swift */,
+				02CFA5612480EEBC00648A18 /* Storyboarded.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		02588A40247F35090082F04F = {
 			isa = PBXGroup;
 			children = (
@@ -100,10 +110,8 @@
 				02588A4C247F35090082F04F /* AppDelegate.swift */,
 				02588A4E247F35090082F04F /* SceneDelegate.swift */,
 				02CFA5552480953400648A18 /* ImageCache.swift */,
-				02CFA5572480CE0500648A18 /* UITableView+.swift */,
-				02CFA5592480CE4200648A18 /* UIView+.swift */,
-				02CFA5612480EEBC00648A18 /* Storyboarded.swift */,
 				02168DD12481ED9F008AE1AF /* AllUsersLoader.swift */,
+				02168DD324825E47008AE1AF /* Utils */,
 				02588A5A247F350C0082F04F /* Info.plist */,
 				02588A55247F350C0082F04F /* Assets.xcassets */,
 			);
